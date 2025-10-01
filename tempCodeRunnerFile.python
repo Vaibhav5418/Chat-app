@@ -1,0 +1,72 @@
+from collections import defaultdict, Counter
+
+class Result:
+    def __init__(self):
+        self.counts = defaultdict(int)
+        self.streak_weather = ' '
+        self.streak_length = 0
+        self.most_common_pattern = None
+
+def analyze_weather(data: str) -> Result:
+    result = Result()
+
+    # Count occurrences
+    for ch in data:
+        result.counts[ch] += 1
+
+    # Find longest streak (latest if tie)
+    current_streak = 1
+    for i in range(1, len(data)):
+        if data[i] == data[i - 1]:
+            current_streak += 1
+        else:
+            current_streak = 1
+
+        if current_streak >= result.streak_length:
+            result.streak_length = current_streak
+            result.streak_weather = data[i]
+
+    # Find most common 3-day pattern (latest if tie)
+    if len(data) >= 3:
+        patterns = [data[i:i+3] for i in range(len(data) - 2)]
+        counter = Counter(patterns)
+        max_freq = max(counter.values())
+        # Iterate from the end to get the latest pattern with max frequency
+        for pattern in reversed(patterns):
+            if counter[pattern] == max_freq:
+                result.most_common_pattern = pattern
+                break
+
+    return result
+
+def main():
+    weather_data = input("Enter weather data string: ").strip()
+    res = analyze_weather(weather_data)
+
+    print("\nWeather Counts:")
+    print(f"S: {res.counts['S']}")
+    print(f"R: {res.counts['R']}")
+    print(f"C: {res.counts['C']}")
+    print(f"H: {res.counts['H']}")
+
+    print(f"\nLongest Streak: {res.streak_length} days of ", end="")
+
+    if res.streak_weather == 'S':
+        print("Sunny weather")
+    elif res.streak_weather == 'R':
+        print("Rainy weather")
+    elif res.streak_weather == 'C':
+        print("Cloudy weather")
+    elif res.streak_weather == 'H':
+        print("Hazy weather")
+    else:
+        print("Unknown")
+
+    # Bonus: Most common 3-day pattern
+    if res.most_common_pattern:
+        print(f"\nMost common 3-day pattern: {res.most_common_pattern}")
+    else:
+        print("\nNo 3-day pattern found.")
+
+if __name__ == "__main__":
+    main()
