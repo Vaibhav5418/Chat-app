@@ -3,16 +3,22 @@
 📖 Overview
 
 This project is a console-based real-time chat application built using TypeScript and WebSockets. It allows users to create or join chat rooms, exchange messages instantly, and view active participants in real time.
+
 The application is designed to demonstrate practical implementation of multiple Software Design Patterns in a real-world scenario, making the codebase scalable, maintainable, and modular.
 
 
 🚀 Features
 
 Create or join chat rooms
+
 Real-time messaging via WebSockets
+
 Active users list & notifications
+
 Dynamic message formatting
+
 Role-based user creation
+
 Modular & pattern-based architecture
 
 
@@ -72,7 +78,9 @@ npm install -D typescript ts-node @types/node
     Start sending messages in real time
     
     Type exit to leave the chat
+    
     Run multiple clients to test live interaction
+
 
 
 
