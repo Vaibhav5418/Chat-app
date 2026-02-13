@@ -49,21 +49,30 @@ ts-node (Run TS directly)
 📦 Installation
 
 Install runtime dependencies:
+
 npm install ws readline
 
 Install dev dependencies:
+
 npm install -D typescript ts-node @types/node
 
 
 ▶️ How to Run
 
 1️⃣ Start the Server: npx ts-node src/server.ts
+
 2️⃣ Start a Client (New Terminal): npx ts-node src/app.ts
+
 3️⃣ Usage Steps:
+
     Enter your username
+    
     Enter chat room ID
+    
     Start sending messages in real time
+    
     Type exit to leave the chat
     Run multiple clients to test live interaction
+
 
 
