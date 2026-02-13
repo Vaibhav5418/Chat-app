@@ -29,6 +29,8 @@ Modular & pattern-based architecture
 
 
 📂 Folder Structure
+
+
 <img width="532" height="687" alt="image" src="https://github.com/user-attachments/assets/857bd24c-9779-441c-9df6-86aaf7d3939b" />
 
 
@@ -63,4 +65,5 @@ npm install -D typescript ts-node @types/node
     Start sending messages in real time
     Type exit to leave the chat
     Run multiple clients to test live interaction
+
 
