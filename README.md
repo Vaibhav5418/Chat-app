@@ -29,41 +29,18 @@ Modular & pattern-based architecture
 
 
 📂 Folder Structure
-src/
-│
-├─ app.ts                # Client CLI
-├─ server.ts             # WebSocket Server
-│
-├─ chat/
-│  ├─ ChatRoom.ts
-│  ├─ ChatRoomManager.ts
-│  ├─ Message.ts
-│  └─ User.ts
-│
-├─ core/
-│  ├─ Logger.ts
-│  ├─ ErrorHandler.ts
-│  └─ Validation.ts
-│
-├─ patterns/
-│  ├─ behavioral/
-│  │  ├─ Observer.ts
-│  │  └─ Strategy.ts
-│  │
-│  ├─ creational/
-│  │  ├─ Singleton.ts
-│  │  └─ UserFactory.ts
-│  │
-│  └─ structural/
-│     ├─ Adapter.ts
-│     └─ MessageDecorator.ts
+<img width="532" height="687" alt="image" src="https://github.com/user-attachments/assets/857bd24c-9779-441c-9df6-86aaf7d3939b" />
+
 
 
 ⚙️ Requirements
 
 Node.js ≥ 18
+
 TypeScript
+
 ws (WebSocket library)
+
 ts-node (Run TS directly)
 
 
@@ -86,3 +63,4 @@ npm install -D typescript ts-node @types/node
     Start sending messages in real time
     Type exit to leave the chat
     Run multiple clients to test live interaction
+
